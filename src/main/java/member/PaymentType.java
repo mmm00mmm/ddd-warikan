@@ -1,5 +1,15 @@
 package member;
 
 public enum PaymentType {
-    NORMAL
+    NORMAL(2);
+
+    private final int value;
+
+    PaymentType(final int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return this.value;
+    }
 }
