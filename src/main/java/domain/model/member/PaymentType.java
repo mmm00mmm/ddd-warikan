@@ -1,4 +1,4 @@
-package member;
+package domain.model.member;
 
 public enum PaymentType {
     NORMAL(2);
@@ -10,6 +10,6 @@ public enum PaymentType {
     }
 
     public int getValue() {
-        return this.value;
+        return value;
     }
 }

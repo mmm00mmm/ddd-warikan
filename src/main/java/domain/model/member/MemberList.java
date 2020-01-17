@@ -1,4 +1,4 @@
-package member;
+package domain.model.member;
 
 import java.util.List;
 

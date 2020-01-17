@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id "org.dddjava.jig-gradle-plugin" version "2020.1.2"
 }
 
 group 'ddd-warikan'
@@ -9,8 +10,19 @@ sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
+
+jig {
+    modelPattern = '.+\\.domain\\.model\\..+'
+    documentTypes = ['ServiceMethodCallHierarchy', 'PackageDependency', 'ApplicationList', 'DomainList', 'BranchList', 'EnumUsage', 'BooleanService']
+    outputDirectory = '/Users/m-yamashita/git/ddd-warikan/build/jig/' //出力ディレクトリ
+    outputOmitPrefix = '.+\\.(service|domain\\.(model|basic))\\.' //出力時に省略する接頭辞パターン
+}
+
+[compileJava, processResources]*.mustRunAfter(clean)
+jigReports.dependsOn(clean, classes)

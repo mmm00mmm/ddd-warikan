@@ -1,4 +1,4 @@
-package amount;
+package domain.model.amount;
 
 /**
  * 請求金額

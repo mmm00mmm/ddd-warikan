@@ -1,4 +1,4 @@
-package amount;
+package domain.model.amount;
 
 /**
  * 支払区分ごとの比率

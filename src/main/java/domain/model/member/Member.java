@@ -1,4 +1,4 @@
-package member;
+package domain.model.member;
 
 public class Member {
     private final MemberName memberName;

@@ -1,4 +1,4 @@
-package drinking_party;
+package domain.model.drinking_party;
 
 import java.time.LocalDateTime;
 

@@ -1,7 +1,7 @@
-package drinking_party;
+package domain.model.drinking_party;
 
-import amount.BillingAmount;
-import member.MemberList;
+import domain.model.amount.BillingAmount;
+import domain.model.member.MemberList;
 
 public class DrinkingParty {
     private final DrinkingPartyName drinkingPartyName;

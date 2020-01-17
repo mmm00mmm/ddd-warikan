@@ -1,6 +1,6 @@
-package amount;
+package domain.model.amount;
 
-import member.PaymentType;
+import domain.model.member.PaymentType;
 
 /**
  * 支払区分ごとの比重

@@ -1,7 +1,7 @@
-package amount;
+package domain.model.amount;
 
-import member.MemberList;
-import member.PaymentType;
+import domain.model.member.MemberList;
+import domain.model.member.PaymentType;
 
 /**
  * 支払区分ごとの人数

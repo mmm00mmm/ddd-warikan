@@ -1,4 +1,4 @@
-package member;
+package domain.model.member;
 
 public enum SecretaryType {
     幹事,
