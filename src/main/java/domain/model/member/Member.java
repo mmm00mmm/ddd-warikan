@@ -10,4 +10,8 @@ public class Member {
         this.secretaryType = secretaryType;
         this.paymentType = paymentType;
     }
+
+    public PaymentType getPaymentType() {
+        return this.paymentType;
+    }
 }
