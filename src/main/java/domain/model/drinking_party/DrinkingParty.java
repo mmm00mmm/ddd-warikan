@@ -28,12 +28,11 @@ public class DrinkingParty {
     }
 
     public void 割り勘() {
-        一つ分の支払金額 _一つ分の支払金額 = new 一つ分の支払金額();
         一人当たりの支払金額B _一人当たりの支払金額B = new 一人当たりの支払金額B();
 
         //一人当たりの支払金額Bが返ってくる
         _一人当たりの支払金額B.算出(
-                _一つ分の支払金額.算出する(
+                一つ分の支払金額.算出する(
                         billingAmount, 合計割合.算出する(memberList)
                 ),
                 PaymentType.NORMAL
