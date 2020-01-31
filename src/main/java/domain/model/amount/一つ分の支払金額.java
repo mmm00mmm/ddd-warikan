@@ -12,6 +12,10 @@ public class 一つ分の支払金額 {
         return value.toString();
     }
 
+    public Integer getValue(){
+        return value;
+    }
+
     public static 一つ分の支払金額 算出する(BillingAmount billingAmount, 合計割合 goukeiWariai) {
         return new 一つ分の支払金額(billingAmount.getValue() / goukeiWariai.getValue());
     }
