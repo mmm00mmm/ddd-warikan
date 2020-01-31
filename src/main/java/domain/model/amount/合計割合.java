@@ -16,6 +16,10 @@ public class 合計割合 {
         return value.toString();
     }
 
+    public Integer getValue() {
+        return value;
+    }
+
     public static 合計割合 算出する(MemberList memberList) {
         return new 合計割合(
                 memberList.stream()
