@@ -4,12 +4,16 @@ import domain.model.amount.BillingAmount;
 import domain.model.amount.一つ分の支払金額;
 import domain.model.amount.一人当たりの支払金額B;
 import domain.model.amount.合計割合;
+import domain.model.drinking_party.DrinkingParty;
+import domain.model.drinking_party.DrinkingPartyDateTime;
+import domain.model.drinking_party.DrinkingPartyName;
 import domain.model.member.Member;
 import domain.model.member.MemberList;
 import domain.model.member.MemberName;
 import domain.model.member.PaymentType;
 import domain.model.member.SecretaryType;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,12 +38,21 @@ public class Main {
         MemberList memberList = new MemberList(members);
 
         合計割合 _合計割合 = 合計割合.算出する(memberList);
-        System.out.println(_合計割合.toString());
+        //System.out.println(_合計割合.toString());
 
         一つ分の支払金額 _一つ分の支払金額 = 一つ分の支払金額.算出する(billingAmount, _合計割合);
-        System.out.println(_一つ分の支払金額.toString());
+        //System.out.println(_一つ分の支払金額.toString());
 
         一人当たりの支払金額B _一人当たりの支払金額B = 一人当たりの支払金額B.算出(_一つ分の支払金額, member1.getPaymentType());
-        System.out.println(_一人当たりの支払金額B.toString());
+        //System.out.println(_一人当たりの支払金額B.toString());
+
+        DrinkingParty drinkingParty = new DrinkingParty(
+                new DrinkingPartyName("新年会"),
+                new DrinkingPartyDateTime(LocalDateTime.of(2020, 1, 1, 19, 00, 00)),
+                memberList,
+                billingAmount
+        );
+
+        drinkingParty.割り勘();
     }
 }
