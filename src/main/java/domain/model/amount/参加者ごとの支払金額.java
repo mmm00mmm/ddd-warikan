@@ -11,11 +11,15 @@ public class 参加者ごとの支払金額 {
         this._一人当たりの支払金額B = _一人当たりの支払金額B;
     }
 
+    public 一人当たりの支払金額B get_一人当たりの支払金額B() {
+        return this._一人当たりの支払金額B;
+    }
+
     @Override
     public String toString() {
         return "参加者名:"
                 + member.toString() + "\n"
                 + "支払金額:"
-                + _一人当たりの支払金額B.toString();
+                + _一人当たりの支払金額B.toString() + "\n\n";
     }
 }

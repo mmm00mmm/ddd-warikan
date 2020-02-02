@@ -14,4 +14,9 @@ public class BillingAmount {
     public Integer getValue() {
         return value;
     }
+
+    @Override
+    public String toString() {
+        return value + "円";
+    }
 }
