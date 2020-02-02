@@ -3,6 +3,7 @@ package domain.model;
 import domain.model.amount.BillingAmount;
 import domain.model.amount.一つ分の支払金額;
 import domain.model.amount.一人当たりの支払金額B;
+import domain.model.amount.参加者ごとの支払金額一覧;
 import domain.model.amount.合計割合;
 import domain.model.drinking_party.DrinkingParty;
 import domain.model.drinking_party.DrinkingPartyDateTime;
@@ -20,10 +21,11 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         BillingAmount billingAmount = new BillingAmount(4000);
+
         Member member1 = new Member(
-                new MemberName("テスト"),
+                new MemberName("テスト1"),
                 SecretaryType.幹事以外,
-                PaymentType.NORMAL
+                PaymentType.HIGH
         );
 
         Member member2 = new Member(
@@ -32,27 +34,38 @@ public class Main {
                 PaymentType.NORMAL
         );
 
+        Member member3 = new Member(
+                new MemberName("テスト3"),
+                SecretaryType.幹事以外,
+                PaymentType.LOW
+        );
+
+
         List members = new ArrayList<>();
         members.add(member1);
         members.add(member2);
+        members.add(member3);
         MemberList memberList = new MemberList(members);
-
-        合計割合 _合計割合 = 合計割合.算出する(memberList);
-        //System.out.println(_合計割合.toString());
-
-        一つ分の支払金額 _一つ分の支払金額 = 一つ分の支払金額.算出する(billingAmount, _合計割合);
-        //System.out.println(_一つ分の支払金額.toString());
-
-        一人当たりの支払金額B _一人当たりの支払金額B = 一人当たりの支払金額B.算出(_一つ分の支払金額, member1.getPaymentType());
-        //System.out.println(_一人当たりの支払金額B.toString());
 
         DrinkingParty drinkingParty = new DrinkingParty(
                 new DrinkingPartyName("新年会"),
-                new DrinkingPartyDateTime(LocalDateTime.of(2020, 1, 1, 19, 00, 00)),
+                new DrinkingPartyDateTime(LocalDateTime.of(2020, 1, 1, 19, 0, 0)),
                 memberList,
                 billingAmount
         );
 
-        drinkingParty.割り勘();
+        System.out.println(
+                drinkingParty.toString() + "============================="
+        );
+
+        参加者ごとの支払金額一覧 _参加者ごとの支払金額一覧 = drinkingParty.割り勘();
+        _参加者ごとの支払金額一覧.stream()
+                .map(member -> member.toString())
+                .forEach(System.out::print);
+
+        System.out.println(
+                "=============================" + "\n"
+                        + _参加者ごとの支払金額一覧.計算する().toString()
+        );
     }
 }
