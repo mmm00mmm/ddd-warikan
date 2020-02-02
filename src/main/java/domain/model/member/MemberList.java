@@ -13,4 +13,8 @@ public class MemberList {
     public Stream<Member> stream() {
         return values.stream();
     }
+
+    public int size() {
+        return values.size();
+    }
 }
