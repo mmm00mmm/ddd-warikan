@@ -14,4 +14,9 @@ public class Member {
     public PaymentType getPaymentType() {
         return this.paymentType;
     }
+
+    @Override
+    public String toString() {
+        return memberName.toString();
+    }
 }
