@@ -1,7 +1,9 @@
 package domain.model.member;
 
 public enum PaymentType {
-    NORMAL(2);
+    HIGH(3),
+    NORMAL(2),
+    LOW(1);
 
     private final int value;
 
