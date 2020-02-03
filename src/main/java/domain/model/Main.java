@@ -5,6 +5,8 @@ import domain.model.amount.一つ分の支払金額;
 import domain.model.amount.一人当たりの支払金額B;
 import domain.model.amount.参加者ごとの支払金額一覧;
 import domain.model.amount.合計割合;
+import domain.model.amount.合計支払金額;
+import domain.model.amount.差額;
 import domain.model.drinking_party.DrinkingParty;
 import domain.model.drinking_party.DrinkingPartyDateTime;
 import domain.model.drinking_party.DrinkingPartyName;
@@ -67,5 +69,8 @@ public class Main {
                 "=============================" + "\n"
                         + _参加者ごとの支払金額一覧.計算する().toString()
         );
+
+        合計支払金額 _合計支払金額 = _参加者ごとの支払金額一覧.計算する();
+        System.out.println(差額.算出する(billingAmount, _合計支払金額));
     }
 }
