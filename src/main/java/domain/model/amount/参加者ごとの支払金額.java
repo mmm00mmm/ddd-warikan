@@ -22,4 +22,11 @@ public class 参加者ごとの支払金額 {
                 + "支払金額:"
                 + _一人当たりの支払金額B.toString() + "\n\n";
     }
+
+    public static 参加者ごとの支払金額 create(Member member, 一つ分の支払金額 onePayment) {
+        return new 参加者ごとの支払金額(
+                member,
+                new 一人当たりの支払金額B(onePayment.getValue() * member.getPaymentType().getValue())
+        );
+    }
 }

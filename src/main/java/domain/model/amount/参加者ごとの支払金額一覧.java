@@ -1,6 +1,9 @@
 package domain.model.amount;
 
+import domain.model.member.MemberList;
+
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class 参加者ごとの支払金額一覧 {
@@ -19,6 +22,14 @@ public class 参加者ごとの支払金額一覧 {
                 values.stream()
                         .mapToInt(amount -> amount.get_一人当たりの支払金額B().getValue())
                         .sum()
+        );
+    }
+
+    public static 参加者ごとの支払金額一覧 create(MemberList memberList, 一つ分の支払金額 _一つ分の支払金額) {
+        return new 参加者ごとの支払金額一覧(
+                memberList.stream()
+                        .map(member -> 参加者ごとの支払金額.create(member, _一つ分の支払金額))
+                        .collect(Collectors.toList())
         );
     }
 }
