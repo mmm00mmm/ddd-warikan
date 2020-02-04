@@ -3,18 +3,13 @@ package domain.model.amount;
 import domain.model.member.PaymentType;
 
 public class 一人当たりの支払金額B {
-    private final Integer value;
+    private final int value;
 
     public 一人当たりの支払金額B(int value) {
         this.value = value;
     }
 
-    @Override
-    public String toString() {
-        return value.toString();
-    }
-
-    public Integer getValue() {
+    public int getValue() {
         return value;
     }
 

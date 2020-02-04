@@ -1,7 +1,7 @@
 package domain.model.amount;
 
 public class 差額 {
-    private final Integer value;
+    private final int value;
 
     public 差額(int value) {
         this.value = value;

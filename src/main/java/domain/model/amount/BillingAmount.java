@@ -4,14 +4,13 @@ package domain.model.amount;
  * 請求金額
  */
 public class BillingAmount {
-    private final Integer value; //TODO:intでいいのかな
+    private final int value;
 
-    //TODO:intでいいのかな
     public BillingAmount(int value) {
         this.value = value;
     }
 
-    public Integer getValue() {
+    public int getValue() {
         return value;
     }
 

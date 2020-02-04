@@ -20,7 +20,7 @@ public class 参加者ごとの支払金額 {
         return "参加者名:"
                 + member.toString() + "\n"
                 + "支払金額:"
-                + _一人当たりの支払金額B.toString() + "\n\n";
+                + _一人当たりの支払金額B.getValue() + "\n\n";
     }
 
     public static 参加者ごとの支払金額 create(Member member, 一つ分の支払金額 onePayment) {

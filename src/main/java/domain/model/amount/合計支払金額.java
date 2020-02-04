@@ -1,13 +1,13 @@
 package domain.model.amount;
 
 public class 合計支払金額 {
-    private final Integer value;
+    private final int value;
 
     public 合計支払金額(int value) {
         this.value = value;
     }
 
-    public Integer getValue() {
+    public int getValue() {
         return value;
     }
 

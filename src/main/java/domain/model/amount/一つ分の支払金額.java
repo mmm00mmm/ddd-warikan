@@ -3,18 +3,13 @@ package domain.model.amount;
 import domain.model.amount.rate.合計割合;
 
 public class 一つ分の支払金額 {
-    private final Integer value;
+    private final int value;
 
     public 一つ分の支払金額(int value) {
         this.value = value;
     }
 
-    @Override
-    public String toString() {
-        return value.toString();
-    }
-
-    public Integer getValue(){
+    public int getValue(){
         return value;
     }
 

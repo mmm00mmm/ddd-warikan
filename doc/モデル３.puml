@@ -5,10 +5,8 @@ package drinking_party {
         + 参加者ごとの支払金額一覧 割り勘()
     }
     class 飲み会名 {
-        - String
     }
     class 開催日時 {
-        - LocalDateTime
     }
 
     飲み会 --> 飲み会名
@@ -16,8 +14,11 @@ package drinking_party {
 }
 
 package member {
+    class 参加者一覧 {
+        - List<参加者>
+        + 合計割合 合計割合を算出する()
+    }
     class 参加者名 {
-        - String
     }
     enum 幹事区分 {
         幹事
@@ -28,32 +29,24 @@ package member {
         NORMAL
         LOW
     }
-    class 支払割合 {
-        - Integer
-    }
 
     参加者一覧 "1" --> "n" 参加者
     参加者 --> 参加者名
     参加者 --> 幹事区分
     参加者 --> 支払区分
-    支払区分 --> 支払割合
 }
 
 package amount {
     class 請求金額 {
-        - Integer
     }
     class 一つ分の支払金額 {
-        - Integer
         + 一つ分の支払金額 算出する(請求金額, 合計割合)
     }
     class 一人当たりの支払金額 {
-        - Integer
         + 一人当たりの支払金額 算出する(一つ分の支払金額, 支払区分)
     }
     package rate {
         class 合計割合 {
-            - Integer
             + 合計割合 算出する(参加者一覧)
         }
     }
