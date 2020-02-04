@@ -35,8 +35,6 @@ public class DrinkingParty {
     }
 
     public 参加者ごとの支払金額一覧 割り勘() {
-        一つ分の支払金額 _一つ分の支払金額 = 一つ分の支払金額.算出する(billingAmount, 合計割合.算出する(memberList));
-
-        return 参加者ごとの支払金額一覧.create(memberList, _一つ分の支払金額);
+        return 参加者ごとの支払金額一覧.create(memberList, billingAmount);
     }
 }
