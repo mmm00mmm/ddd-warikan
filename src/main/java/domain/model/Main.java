@@ -1,10 +1,7 @@
 package domain.model;
 
 import domain.model.amount.BillingAmount;
-import domain.model.amount.一つ分の支払金額;
-import domain.model.amount.一人当たりの支払金額B;
 import domain.model.amount.参加者ごとの支払金額一覧;
-import domain.model.amount.合計割合;
 import domain.model.amount.合計支払金額;
 import domain.model.amount.差額;
 import domain.model.drinking_party.DrinkingParty;
