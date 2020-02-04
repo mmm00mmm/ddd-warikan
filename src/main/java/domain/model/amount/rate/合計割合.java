@@ -1,4 +1,4 @@
-package domain.model.amount;
+package domain.model.amount.rate;
 
 import domain.model.member.Member;
 import domain.model.member.MemberList;

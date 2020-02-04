@@ -3,7 +3,7 @@ package domain.model.drinking_party;
 import domain.model.amount.BillingAmount;
 import domain.model.amount.一つ分の支払金額;
 import domain.model.amount.参加者ごとの支払金額一覧;
-import domain.model.amount.合計割合;
+import domain.model.amount.rate.合計割合;
 import domain.model.member.MemberList;
 
 /**

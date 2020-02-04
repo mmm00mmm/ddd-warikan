@@ -51,9 +51,11 @@ package amount {
         - Integer
         + 一人当たりの支払金額 算出する(一つ分の支払金額, 支払区分)
     }
-    class 合計割合 {
-        - Integer
-        + 合計割合 算出する(参加者一覧)
+    package rate {
+        class 合計割合 {
+            - Integer
+            + 合計割合 算出する(参加者一覧)
+        }
     }
     class 参加者ごとの支払金額 {
     }
