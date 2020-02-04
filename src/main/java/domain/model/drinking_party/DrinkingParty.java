@@ -2,13 +2,9 @@ package domain.model.drinking_party;
 
 import domain.model.amount.BillingAmount;
 import domain.model.amount.一つ分の支払金額;
-import domain.model.amount.一人当たりの支払金額B;
-import domain.model.amount.参加者ごとの支払金額;
 import domain.model.amount.参加者ごとの支払金額一覧;
 import domain.model.amount.合計割合;
 import domain.model.member.MemberList;
-
-import java.util.stream.Collectors;
 
 /**
  * 飲み会
@@ -41,10 +37,6 @@ public class DrinkingParty {
     public 参加者ごとの支払金額一覧 割り勘() {
         一つ分の支払金額 _一つ分の支払金額 = 一つ分の支払金額.算出する(billingAmount, 合計割合.算出する(memberList));
 
-        return new 参加者ごとの支払金額一覧(
-                memberList.stream()
-                        .map(member -> new 参加者ごとの支払金額(member, 一人当たりの支払金額B.算出(_一つ分の支払金額, member.getPaymentType())))
-                        .collect(Collectors.toList())
-        );
+        return 参加者ごとの支払金額一覧.create(memberList, _一つ分の支払金額);
     }
 }
