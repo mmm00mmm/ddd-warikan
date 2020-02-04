@@ -1,5 +1,7 @@
 package domain.model.member;
 
+import domain.model.amount.rate.合計割合;
+
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -16,5 +18,14 @@ public class MemberList {
 
     public int size() {
         return values.size();
+    }
+
+    public 合計割合 合計割合を算出する() {
+        return new 合計割合(
+                values.stream()
+                        .map(Member::getPaymentType)
+                        .mapToInt(PaymentType::getValue)
+                        .sum()
+        );
     }
 }
