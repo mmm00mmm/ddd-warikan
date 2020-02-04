@@ -24,19 +24,19 @@ public class Main {
         Member member1 = new Member(
                 new MemberName("テスト1"),
                 SecretaryType.幹事以外,
-                PaymentType.HIGH
+                PaymentType.多め
         );
 
         Member member2 = new Member(
                 new MemberName("テスト2"),
                 SecretaryType.幹事以外,
-                PaymentType.NORMAL
+                PaymentType.普通
         );
 
         Member member3 = new Member(
                 new MemberName("テスト3"),
                 SecretaryType.幹事以外,
-                PaymentType.LOW
+                PaymentType.少なめ
         );
 
 
