@@ -25,10 +25,10 @@ public class 参加者ごとの支払金額一覧 {
         );
     }
 
-    public static 参加者ごとの支払金額一覧 create(MemberList memberList, BillingAmount billingAmount) {
+    public static 参加者ごとの支払金額一覧 create(MemberList memberList, 均一の支払金額 _均一の支払金額) {
         return new 参加者ごとの支払金額一覧(
                 memberList.stream()
-                        .map(member -> 参加者ごとの支払金額.create(member, 均一の支払金額.算出する(billingAmount, memberList.合計割合を算出する())))
+                        .map(member -> 参加者ごとの支払金額.create(member, _均一の支払金額))
                         .collect(Collectors.toList())
         );
     }

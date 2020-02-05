@@ -2,6 +2,7 @@ package domain.model.drinking_party;
 
 import domain.model.amount.BillingAmount;
 import domain.model.amount.参加者ごとの支払金額一覧;
+import domain.model.amount.均一の支払金額;
 import domain.model.member.MemberList;
 
 /**
@@ -33,6 +34,10 @@ public class DrinkingParty {
     }
 
     public 参加者ごとの支払金額一覧 割り勘() {
-        return 参加者ごとの支払金額一覧.create(memberList, billingAmount);
+        return 参加者ごとの支払金額一覧.create(memberList, 算出する());
+    }
+
+    private 均一の支払金額 算出する() {
+        return new 均一の支払金額(billingAmount.getValue() / memberList.合計割合を算出する().getValue());
     }
 }

@@ -12,8 +12,4 @@ public class 均一の支払金額 {
     public int getValue(){
         return value;
     }
-
-    public static 均一の支払金額 算出する(BillingAmount billingAmount, 合計割合 goukeiWariai) {
-        return new 均一の支払金額(billingAmount.getValue() / goukeiWariai.getValue());
-    }
 }
