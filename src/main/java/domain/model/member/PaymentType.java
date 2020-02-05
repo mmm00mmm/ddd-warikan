@@ -1,17 +1,17 @@
 package domain.model.member;
 
 public enum PaymentType {
-    多め(3),
-    普通(2),
-    少なめ(1);
+    多め(PaymentRate.多め),
+    普通(PaymentRate.普通),
+    少なめ(PaymentRate.少なめ);
 
-    private final int value;
+    private final PaymentRate paymentRate;
 
-    PaymentType(final int value) {
-        this.value = value;
+    PaymentType(PaymentRate paymentRate) {
+        this.paymentRate = paymentRate;
     }
 
-    public int getValue() {
-        return value;
+    public PaymentRate getPaymentRate() {
+        return paymentRate;
     }
 }

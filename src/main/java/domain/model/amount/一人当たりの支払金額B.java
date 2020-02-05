@@ -15,7 +15,7 @@ public class 一人当たりの支払金額B {
 
     public static 一人当たりの支払金額B 算出(一つ分の支払金額 onePayment, PaymentType paymentType) {
         return new 一人当たりの支払金額B(
-                onePayment.getValue() * paymentType.getValue()
+                onePayment.getValue() * paymentType.getPaymentRate().getValue()
         );
     }
 }

@@ -24,7 +24,8 @@ public class MemberList {
         return new 合計割合(
                 values.stream()
                         .map(Member::getPaymentType)
-                        .mapToInt(PaymentType::getValue)
+                        .map(PaymentType::getPaymentRate)
+                        .mapToInt(PaymentRate::getValue)
                         .sum()
         );
     }
