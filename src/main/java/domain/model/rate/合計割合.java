@@ -1,4 +1,4 @@
-package domain.model.amount.rate;
+package domain.model.rate;
 
 public class 合計割合 {
     private final int value;

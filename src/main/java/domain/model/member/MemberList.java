@@ -1,6 +1,6 @@
 package domain.model.member;
 
-import domain.model.amount.rate.合計割合;
+import domain.model.rate.合計割合;
 
 import java.util.List;
 import java.util.stream.Stream;
