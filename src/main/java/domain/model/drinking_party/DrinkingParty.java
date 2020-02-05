@@ -4,6 +4,7 @@ import domain.model.amount.BillingAmount;
 import domain.model.amount.参加者ごとの支払金額一覧;
 import domain.model.amount.均一の支払金額;
 import domain.model.member.MemberList;
+import domain.model.rate.合計割合;
 
 /**
  * 飲み会
@@ -34,10 +35,9 @@ public class DrinkingParty {
     }
 
     public 参加者ごとの支払金額一覧 割り勘() {
-        return 参加者ごとの支払金額一覧.create(memberList, 算出する());
-    }
+        合計割合 _合計割合 = memberList.合計割合を算出する();
+        均一の支払金額 _均一の支払金額 = 均一の支払金額.算出する(billingAmount, _合計割合);
 
-    private 均一の支払金額 算出する() {
-        return new 均一の支払金額(billingAmount.getValue() / memberList.合計割合を算出する().getValue());
+        return 参加者ごとの支払金額一覧.create(memberList, _均一の支払金額);
     }
 }

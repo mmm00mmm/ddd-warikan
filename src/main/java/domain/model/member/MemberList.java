@@ -6,23 +6,23 @@ import java.util.List;
 import java.util.stream.Stream;
 
 public class MemberList {
-    private final List<Member> values;
+    private final List<Member> members;
 
     public MemberList(List<Member> memberList) {
-        this.values = memberList;
+        this.members = memberList;
     }
 
     public Stream<Member> stream() {
-        return values.stream();
+        return members.stream();
     }
 
     public int size() {
-        return values.size();
+        return members.size();
     }
 
     public 合計割合 合計割合を算出する() {
         return new 合計割合(
-                values.stream()
+                members.stream()
                         .map(Member::getPaymentType)
                         .mapToInt(PaymentType::getValue)
                         .sum()
