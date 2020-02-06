@@ -28,7 +28,8 @@ public class 参加者ごとの支払金額一覧 {
     public static 参加者ごとの支払金額一覧 create(MemberList memberList, 均一の支払金額 _均一の支払金額) {
         return new 参加者ごとの支払金額一覧(
                 memberList.stream()
-                        .map(member -> 参加者ごとの支払金額.create(member, _均一の支払金額))
+                        .map(member -> new 参加者ごとの支払金額(
+                                member, 支払区分毎の支払金額.算出する(_均一の支払金額, member.getPaymentType())))
                         .collect(Collectors.toList())
         );
     }
